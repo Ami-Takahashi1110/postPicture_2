@@ -10,14 +10,29 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="gTV-IL-0wX" customClass="CollectionViewCell" customModule="cell">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="223" height="245"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="223" height="245"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="axY-Kb-07E">
+                        <rect key="frame" x="0.0" y="0.0" width="223" height="245"/>
+                    </imageView>
+                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <point key="canvasLocation" x="9.1603053435114496" y="0.0"/>
+            <constraints>
+                <constraint firstItem="axY-Kb-07E" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="6K8-lH-yjl"/>
+                <constraint firstItem="axY-Kb-07E" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="DH2-TU-B8P"/>
+                <constraint firstItem="axY-Kb-07E" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Svg-lS-Gyx"/>
+                <constraint firstItem="axY-Kb-07E" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="cf9-px-MNr"/>
+            </constraints>
+            <size key="customSize" width="223" height="245"/>
+            <connections>
+                <outlet property="imageView" destination="axY-Kb-07E" id="VbJ-Ee-NG1"/>
+            </connections>
+            <point key="canvasLocation" x="141.22137404580153" y="68.661971830985919"/>
         </collectionViewCell>
     </objects>
 </document>

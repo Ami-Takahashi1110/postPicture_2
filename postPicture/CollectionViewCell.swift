@@ -7,9 +7,12 @@
 
 import UIKit
 import FirebaseStorage
+import FirebaseStorageUI
 
 class CollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // 参照の作成
@@ -26,8 +29,9 @@ class CollectionViewCell: UICollectionViewCell {
                 if let downloadURL = url {
                     // ダウンロードしたファイルのURLを使用して、イメージを表示するなどの処理を行う
                     // UIImageViewにイメージを設定する
+                    // DispatchQueueは非同期処理を行うクロージャーなのでselfを使用する必要がある
                     DispatchQueue.main.async {
-                        cell.imageView.sd_setImage(with: downloadURL, completed: nil)
+                        self.imageView.sd_setImage(with: downloadURL)
                     }
                 }
             }
