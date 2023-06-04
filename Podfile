@@ -10,5 +10,7 @@ target 'postPicture' do
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
   pod 'FirebaseStorage'
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseStorageUI'
 
 end

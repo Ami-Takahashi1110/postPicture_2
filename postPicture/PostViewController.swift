@@ -59,14 +59,29 @@ class PostViewController: UIViewController, UINavigationControllerDelegate, UIIm
         // 参照の作成
         let storage = Storage.storage()
         let storageRef = storage.reference()
-        // 子フォルダの作成
+        // アップロードしたい画像ファイルを取得する
+        let image = UIImage(named: "space.jpg")
         let imagesRef = storageRef.child("images")
-        
-        var spaceRef = storageRef.child("images/space.jpg")
-        
-        
-        let imageRef = Storage.storage().reference().child("images")
-        CollectionViewCell.setImage(with: imageRef)
+
+        // アップロードするイメージの参照を作成する
+        let imageRef = imagesRef.child("images/space.jpg")
+
+        // データとメタデータを準備する
+        if let imageData = image?.jpegData(compressionQuality: 0.8) {
+            let metadata = StorageMetadata()
+            metadata.contentType = "image/jpeg"
+
+            // ストレージにイメージをアップロードする
+            let uploadTask = imageRef.putData(imageData, metadata: metadata) { (metadata, error) in
+                if let error = error {
+                    // アップロード中にエラーが発生した場合の処理
+                    print("アップロードエラー: \(error.localizedDescription)")
+                } else {
+                    // アップロードが成功した場合の処理
+                    print("アップロード成功")
+                }
+            }
+        }
 
     }
 }
